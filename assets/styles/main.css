@@ -1,0 +1,168 @@
+/* Import the fonts we use for the website */
+/* latin-ext */
+@font-face {
+    font-family: 'Jersey 10';
+    font-display: swap;
+    src: url(/assets/fonts/Jersey10-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Jersey 10 Charted';
+    font-display: swap;
+    src: url(/assets/fonts/Jersey10Charted-Regular.ttf);
+}
+
+html,
+body {
+    color: white;
+    font-family: "Jersey 10", sans-serif;
+    font-size: 30px;
+}
+
+@keyframes background {
+    0% {
+        background-position-y: 0px;
+    }
+
+    100% {
+        background-position-y: 16px;
+    }
+}
+
+html {
+    background-color: black;
+    background: linear-gradient(0deg, rgb(10, 25, 37) 0%, rgb(10, 25, 37) 25%, rgba(17, 17, 17, 1) 26%, rgba(17, 17, 17, 1) 100%, rgb(10, 25, 37) 100%);
+    background-repeat: repeat-y;
+    background-size: 100% 16px;
+    animation-name: background;
+    animation-duration: 0.2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+h1 {
+    text-align: center;
+    font-family: "Jersey 10 Charted", sans-serif;
+    font-size: 80px;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 32px;
+}
+
+a:link {
+    color: #4baeff;
+}
+
+a:visited {
+    color: #4baeff;
+}
+
+a:active {
+    color: #008cff;
+}
+
+a:hover {
+    color: #91cdff;
+}
+
+h1>a {
+    color: #008cff;
+}
+
+h1>a:visited {
+    color: #008cff;
+}
+
+h1>a:active {
+    color: #008cff;
+}
+
+h1>a:hover {
+    color: #4baeff;
+}
+
+h2 {
+    font-size: 38px;
+    color: #008cff
+}
+
+.wrapper {
+    width: 640px;
+    max-width: 100%;
+
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.wrapper>div,
+.wrapper>span>div .wrapper>a>div {
+    background-color: #111;
+    border: 2px solid #008cff;
+    padding: 8px 32px;
+    margin-bottom: 32px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.wrapper>span {
+    display: block;
+    margin-bottom: 32px;
+}
+
+.wrapper>a {
+    display: block;
+    margin-bottom: 32px;
+}
+
+.wrapper>a,
+.wrapper>a:link {
+    text-decoration: none;
+}
+
+.wrapper>a>div.joinbox {
+    border: 2px solid #008cff;
+    background-color: #008cff;
+    text-align: center;
+}
+
+.wrapper>a>div.joinbox:hover {
+    border: 2px solid #4baeff;
+    background-color: #4baeff;
+}
+
+.wrapper>a>div.joinbox.loading {
+    border: 2px solid #8a8a8a;
+    background-color: #8a8a8a;
+    text-align: center;
+}
+
+.wrapper>a>div.joinbox.loading:hover {
+    border: 2px solid #8a8a8a;
+    background-color: #8a8a8a;
+    text-align: center;
+}
+
+.wrapper>a>div.joinbox.offline {
+    border: 2px solid #b30000;
+    background-color: #b30000;
+}
+
+.wrapper>a>div.joinbox.offline:hover {
+    border: 2px solid #d45252;
+    background-color: #d45252;
+}
+
+.wrapper>a>div.joinbox * {
+    color: black !important;
+    text-decoration: none;
+}
+
+.teenyfix {
+    font-size: 0px;
+}
