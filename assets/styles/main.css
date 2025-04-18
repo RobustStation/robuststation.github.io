@@ -163,6 +163,21 @@ h2 {
     text-decoration: none;
 }
 
+ul.precedents {
+    font-size: 24px;
+    color: gray;
+}
 .teenyfix {
     font-size: 0px;
+}
+
+table {
+    border: 2px solid gray;
+    padding: 4px;
+}
+
+thead {
+    background: gray;
+    color: black;
+    padding: 8px;
 }
