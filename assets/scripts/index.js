@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.server-name').innerHTML = "RobustStation Main"
     
     if (body.success) {
-        document.querySelector('.joinbox-stats').innerHTML = body.data.players
+        document.querySelector('.joinbox-stats').innerHTML = `${body.data.players} players online`
         document.querySelector('.join-text').innerHTML = "Click here to join!"
     } else {
         document.querySelector('.joinbox-stats').innerHTML = ""
