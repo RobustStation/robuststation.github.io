@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.server-name').innerHTML = "RobustStation Main"
     
     if (body.success) {
-        document.querySelector('.joinbox-stats').innerHTML = body.data.status
+        document.querySelector('.joinbox-stats').innerHTML = body.data.players
         document.querySelector('.join-text').innerHTML = "Click here to join!"
     } else {
         document.querySelector('.joinbox-stats').innerHTML = ""
@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   // http://92.63.189.146:7824/query
   //xhttp.open('GET', 'https://ss13-hub.toasterpanic.workers.dev/http://5.198.125.120:7777/query')
+  //xhttp.open('GET', 'https://ss13-hub.toasterpanic.workers.dev/')
   xhttp.open('GET', 'https://ss13-hub.toasterpanic.workers.dev/')
   xhttp.send()
 })
