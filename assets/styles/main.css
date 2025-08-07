@@ -94,12 +94,20 @@ h2 {
 }
 
 .wrapper {
-    width: 640px;
+    width: 1280px;
     max-width: 100%;
 
     position: relative;
     left: 50%;
+
+    display: flex;
+
+    flex: 1 1;
+    flex-direction: row;
+
     transform: translateX(-50%);
+
+    &>* {padding-left: 8px; padding-right: 8px;}
 }
 
 .center-vertically {
@@ -109,8 +117,8 @@ h2 {
     transform: translate(-50%, -50%);
 }
 
-.wrapper>div,
-.wrapper>span>div .wrapper>a>div {
+.wrapper>div>div,
+.wrapper>div>span>div .wrapper>a>div {
     background-color: #111;
     border: 2px solid #008cff;
     padding: 8px 32px;
@@ -119,55 +127,55 @@ h2 {
     width: 100%;
 }
 
-.wrapper>span {
+.wrapper>div>span {
     display: block;
     margin-bottom: 32px;
 }
 
-.wrapper>a {
+.wrapper>div>a {
     display: block;
     margin-bottom: 32px;
 }
 
-.wrapper>a,
-.wrapper>a:link {
+.wrapper>div>a,
+.wrapper>div>a:link {
     text-decoration: none;
 }
 
-.wrapper>a>div.joinbox {
+.wrapper>div>a>div.joinbox {
     border: 2px solid #008cff;
     background-color: #008cff;
     text-align: center;
 }
 
-.wrapper>a>div.joinbox:hover {
+.wrapper>div>a>div.joinbox:hover {
     border: 2px solid #4baeff;
     background-color: #4baeff;
 }
 
-.wrapper>a>div.joinbox.loading {
+.wrapper>div>a>div.joinbox.loading {
     border: 2px solid #8a8a8a;
     background-color: #8a8a8a;
     text-align: center;
 }
 
-.wrapper>a>div.joinbox.loading:hover {
+.wrapper>div>a>div.joinbox.loading:hover {
     border: 2px solid #8a8a8a;
     background-color: #8a8a8a;
     text-align: center;
 }
 
-.wrapper>a>div.joinbox.offline {
+.wrapper>div>a>div.joinbox.offline {
     border: 2px solid #b30000;
     background-color: #b30000;
 }
 
-.wrapper>a>div.joinbox.offline:hover {
+.wrapper>div>a>div.joinbox.offline:hover {
     border: 2px solid #d45252;
     background-color: #d45252;
 }
 
-.wrapper>a>div.joinbox * {
+.wrapper>div>a>div.joinbox * {
     color: black !important;
     text-decoration: none;
 }
@@ -176,6 +184,7 @@ ul.precedents {
     font-size: 24px;
     color: gray;
 }
+
 .teenyfix {
     font-size: 0px;
 }
@@ -189,4 +198,8 @@ thead {
     background: gray;
     color: black;
     padding: 8px;
+}
+
+button.button {
+    background-color: #008cff;
 }
