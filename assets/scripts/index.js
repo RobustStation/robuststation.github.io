@@ -3,16 +3,29 @@ document.addEventListener('DOMContentLoaded', () => {
   xhttp.onload = function () {
     var body = JSON.parse(this.responseText)
 
+    console.log(body)
+
     document.querySelector('.joinbox').classList.remove("loading")
-    document.querySelector('.server-name').innerHTML = "RobustStation Main"
+    document.querySelector('.main .server-name').innerHTML = "RobustStation Main"
     
-    if (body.success) {
-        document.querySelector('.joinbox-stats').innerHTML = `${body.data.players} players online`
-        document.querySelector('.join-text').innerHTML = "Click here to join!"
+    if (body.main?.data) {
+        document.querySelector('.main .joinbox-stats').innerHTML = `${body.main.data.players} players online`
+        document.querySelector('.main .join-text').innerHTML = "Click here to join!"
     } else {
-        document.querySelector('.joinbox-stats').innerHTML = ""
-        document.querySelector('.join-text').innerHTML = "Server is offline!"
-        document.querySelector('.joinbox').classList.add("offline")
+        document.querySelector('.main .joinbox-stats').innerHTML = ""
+        document.querySelector('.main .join-text').innerHTML = "Server is offline!"
+        document.querySelector('.main .joinbox').classList.add("offline")
+    }
+
+    document.querySelector('.eu .server-name').innerHTML = "RobustStation EU"
+    
+    if (body.eu?.data) {
+        document.querySelector('.eu .joinbox-stats').innerHTML = `${body.eu.data.players} players online`
+        document.querySelector('.eu .join-text').innerHTML = "Click here to join!"
+    } else {
+        document.querySelector('.eu .joinbox-stats').innerHTML = ""
+        document.querySelector('.eu .join-text').innerHTML = "Server is offline!"
+        document.querySelector('.eu .joinbox').classList.add("offline")
     }
     
   }
