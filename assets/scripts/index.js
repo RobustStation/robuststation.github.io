@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.main .joinbox').classList.add("offline")
     }
 
-    document.querySelector('.eu .server-name').innerHTML = "RobustStation EU"
+    document.querySelector('.eu .server-name').innerHTML = "RobustStation Europe"
     
     if (body.eu?.data) {
         document.querySelector('.eu .joinbox-stats').innerHTML = `${body.eu.data.players} players online`
