@@ -6,26 +6,14 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log(body)
 
     document.querySelector('.joinbox').classList.remove("loading")
-    document.querySelector('.main .server-name').innerHTML = "RobustStation Main"
     
     if (body.main?.data) {
-        document.querySelector('.main .joinbox-stats').innerHTML = `${body.main.data.players} players online`
+        document.querySelector('.main .little-text').innerHTML = `online with ${body.main.data.players} players`
         document.querySelector('.main .join-text').innerHTML = "Click here to join!"
+        document.querySelector('.main.joinbox').classList.add("online")
     } else {
-        document.querySelector('.main .joinbox-stats').innerHTML = ""
-        document.querySelector('.main .join-text').innerHTML = "Server is offline!"
-        document.querySelector('.main .joinbox').classList.add("offline")
-    }
-
-    document.querySelector('.eu .server-name').innerHTML = "RobustStation Europe"
-    
-    if (body.eu?.data) {
-        document.querySelector('.eu .joinbox-stats').innerHTML = `${body.eu.data.players} players online`
-        document.querySelector('.eu .join-text').innerHTML = "Click here to join!"
-    } else {
-        document.querySelector('.eu .joinbox-stats').innerHTML = ""
-        document.querySelector('.eu .join-text').innerHTML = "Server is offline!"
-        document.querySelector('.eu .joinbox').classList.add("offline")
+        document.querySelector('.main .little-text').innerHTML = "offline 3:"
+        document.querySelector('.main.joinbox').classList.add("offline")
     }
     
   }

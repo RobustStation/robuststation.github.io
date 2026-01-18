@@ -12,11 +12,16 @@
     src: url(/assets/fonts/Jersey10Charted-Regular.ttf);
 }
 
+:root {
+    --border-color-1: #0f7bc4;
+    --loading-color: gray;
+    --offline-color: rgb(255, 67, 67);
+}
+
 html,
 body {
     color: white;
     font-family: "Jersey 10", sans-serif;
-    font-size: 28px;
     padding: 0;
     margin: 0;
 }
@@ -31,175 +36,121 @@ body {
     }
 }
 
+@keyframes title-background {
+    0% {
+        background-position-y: 0px;
+    }
+
+    100% {
+        background-position-y: -460px;
+        background-position-x: 1793px;
+    }
+}
+
+
 html {
     background-color: black;
     background: linear-gradient(0deg, rgb(10, 25, 37) 0%, rgb(10, 25, 37) 25%, rgba(17, 17, 17, 1) 26%, rgba(17, 17, 17, 1) 100%, rgb(10, 25, 37) 100%);
     background-repeat: repeat-y;
     background-size: 100% 16px;
     animation-name: background;
-    animation-duration: 0.2s;
+    animation-duration: 0.6s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 
-}
+    font-size: 0;
 
-li {
-    margin-bottom: 8px;
 }
 
 h1 {
-    text-align: center;
-    font-family: "Jersey 10 Charted", sans-serif;
-    font-size: 80px;
-    font-weight: 400;
-    font-style: normal;
-    margin-bottom: 32px;
-}
-
-a:link {
-    color: #4baeff;
-}
-
-a:visited {
-    color: #4baeff;
-}
-
-a:active {
-    color: #008cff;
-}
-
-a:hover {
-    color: #91cdff;
-}
-
-h1>a {
-    color: #008cff;
-}
-
-h1>a:visited {
-    color: #008cff;
-}
-
-h1>a:active {
-    color: #008cff;
-}
-
-h1>a:hover {
-    color: #4baeff;
-}
-
-h2 {
-    font-size: 38px;
-    color: #008cff
+    margin: 0;
 }
 
 .wrapper {
-    width: 1280px;
+    width: 100%;
+    font-size: 28px;
+    text-align: center;
+}
+
+.title-banner {
+    background: url("/assets/images/stars.png"), black;
+    text-align: center;
+    height: 75vh;
+    position: relative;
+    border: 4px solid var(--border-color-1);
+    margin: 32px;
+
+    animation-name: title-background;
+    animation-duration: 12s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    .title {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.text-box {
+    background-color: black;
+    border: 4px solid var(--border-color-1);
+    margin: auto;
+    width: 800px;
+    padding: 16px;
+    max-width: 100%;
+    text-align: left;
+
+    margin-bottom: 32px;
+}
+
+.joinbox {
+    display: inline-block;
+    
+    background-color: black;
+    border: 4px solid var(--loading-color);
+    margin: auto;
+    width: 320px;
+    padding: 16px;
     max-width: 100%;
 
-    position: relative;
-    left: 50%;
-
-    display: flex;
-
-    flex: 1 1;
-    flex-direction: row;
-
-    transform: translateX(-50%);
-
-    &>* {padding-left: 8px; padding-right: 8px;}
-}
-
-.center-vertically {
-    position: relative;
-    left: 50%;
-    top: 50vh;
-    transform: translate(-50%, -50%);
-}
-
-.wrapper>div>div,
-.wrapper>div>span>div .wrapper>a>div {
-    background-color: #111;
-    border: 2px solid #008cff;
-    padding: 8px 32px;
     margin-bottom: 32px;
-    box-sizing: border-box;
-    width: 100%;
-}
 
-.wrapper>div>span {
-    display: block;
-    margin-bottom: 32px;
-}
+    transition: 0.12s;
 
-.wrapper>div>a {
-    display: block;
-    margin-bottom: 32px;
-}
-
-.wrapper>div>a,
-.wrapper>div>a:link {
-    text-decoration: none;
-}
-
-.wrapper>div>a>div.joinbox {
-    border: 2px solid #008cff;
-    background-color: #008cff;
     text-align: center;
-}
 
-.wrapper>div>a>div.joinbox:hover {
-    border: 2px solid #4baeff;
-    background-color: #4baeff;
-}
+    user-select: none;
 
-.wrapper>div>a>div.joinbox.loading {
-    border: 2px solid #8a8a8a;
-    background-color: #8a8a8a;
-    text-align: center;
-}
+    &.offline {
+        border: 4px solid var(--offline-color);
+        color: var(--offline-color);
 
-.wrapper>div>a>div.joinbox.loading:hover {
-    border: 2px solid #8a8a8a;
-    background-color: #8a8a8a;
-    text-align: center;
-}
+        .little-text {
+            color: var(--offline-color);
+        }
+    }
 
-.wrapper>div>a>div.joinbox.offline {
-    border: 2px solid #b30000;
-    background-color: #b30000;
-}
+    &.online {
+        border: 4px solid var(--border-color-1);
 
-.wrapper>div>a>div.joinbox.offline:hover {
-    border: 2px solid #d45252;
-    background-color: #d45252;
-}
+        &:hover {
+            background-color: var(--border-color-1);
+            cursor: pointer;
+            transition: 0.12s;
 
-.wrapper>div>a>div.joinbox * {
-    color: black !important;
-    text-decoration: none;
-}
+            .little-text {
+                color: #acacac
+            }
+        }
+    }
 
-ul.precedents {
-    font-size: 24px;
-    color: gray;
-}
+    .big-text {
+        font-size: 40px;
+    }
 
-.teenyfix {
-    font-size: 0px;
-}
-
-table {
-    border: 2px solid gray;
-    padding: 4px;
-}
-
-thead {
-    background: gray;
-    color: black;
-    padding: 8px;
-}
-
-button.button {
-    background-color: #008cff;
+    .little-text {
+        color: gray
+    }
 }
